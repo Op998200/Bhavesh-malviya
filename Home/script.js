@@ -1,45 +1,41 @@
-function myFunction() {
-  var navMenu = document.getElementById("nav-menu");
-  var isMobile = window.innerWidth <= 600;
-  
-  if (!isMobile) {
-    // Ensure normal nav is shown on desktop
-    navMenu.classList.remove("show");
-    navMenu.style.display = "flex";
-    return;
-  }
-  
-  // Toggle mobile menu
-  if (navMenu.classList.contains("show")) {
-    navMenu.classList.remove("show");
-  } else {
-    navMenu.classList.add("show");
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const navMenu = document.getElementById("nav-menu");
+  const navLinks = document.querySelectorAll("#nav-menu a");
 
-// Ensure proper display on window resize
-window.addEventListener('resize', function() {
-  var navMenu = document.getElementById("nav-menu");
-  var isMobile = window.innerWidth <= 600;
-  
-  if (!isMobile) {
-    // Desktop view - ensure normal nav is visible
-    navMenu.classList.remove("show");
-    navMenu.style.display = "flex";
-  } else {
-    // Mobile view - ensure menu is hidden by default
-    navMenu.classList.remove("show");
-  }
-});
+  const isMobile = () => window.innerWidth <= 600;
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-  var navMenu = document.getElementById("nav-menu");
-  var isMobile = window.innerWidth <= 600;
-  
-  if (!isMobile) {
-    navMenu.style.display = "flex";
-  } else {
-    navMenu.classList.remove("show");
-  }
+  const toggleMenu = () => {
+    if (isMobile()) {
+      navMenu.classList.toggle("show");
+    }
+  };
+
+  const closeMenu = () => {
+    if (isMobile()) {
+      navMenu.classList.remove("show");
+    }
+  };
+
+  const handleOutsideClick = (event) => {
+    if (
+      isMobile() &&
+      !navMenu.contains(event.target) &&
+      !hamburgerBtn.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  };
+
+  hamburgerBtn.addEventListener("click", toggleMenu);
+  window.addEventListener("resize", closeMenu);
+  document.addEventListener("click", handleOutsideClick);
+
+  // Close menu when clicking any link
+  navLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Ensure correct state on load
+  closeMenu();
 });
