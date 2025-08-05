@@ -8,10 +8,6 @@
     font-family: poppins;
 }
 
-body {
-    /* height: 5000px; */
-}
-
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -731,3 +727,4 @@ color: #1f1e1e;
         background-size: cover;
     }
 }
+
