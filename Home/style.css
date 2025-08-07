@@ -290,38 +290,49 @@ body {
 }
 
 .offer-banner {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background: linear-gradient(135deg, #ffe6f0 0%, #d0f0ff 100%);
   color: #222;
   text-align: center;
-  padding: 30px 20px;
+  padding: 2rem 1rem;
   font-family: 'Poppins', sans-serif;
   border-radius: 12px;
-  margin: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 1.5rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .offer-banner h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .offer-banner p {
-  font-size: 1.1rem;
-  margin: 8px 0;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  margin: 0.5rem 0;
+  line-height: 1.6;
 }
 
 .offer-btn {
   display: inline-block;
-  margin-top: 15px;
-  background: #007bff;
-  color: white;
-  padding: 12px 25px;
+  margin-top: 1rem;
+  background: #ff3366;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   text-decoration: none;
-  transition: 0.3s;
+  transition: background 0.3s ease-in-out;
 }
 
 .offer-btn:hover {
-  background: #0056b3;
+  background: #cc2952;
+}
+
+@media (max-width: 768px) {
+  .offer-banner {
+    margin: 1rem;
+    padding: 1.5rem 1rem;
+  }
 }
