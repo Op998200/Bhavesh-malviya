@@ -288,3 +288,40 @@ body {
     display: none !important;
   }
 }
+
+.offer-banner {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #222;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.offer-banner h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.offer-banner p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.offer-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.offer-btn:hover {
+  background: #0056b3;
+}
