@@ -3,17 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const navMenu = document.getElementById("nav-menu");
   const navLinks = document.querySelectorAll("#nav-menu a");
 
-  const isMobile = () => window.innerWidth <= 600;
+  const isMobile = () => window.innerWidth <= 700;
 
   const toggleMenu = () => {
     if (isMobile()) {
       navMenu.classList.toggle("show");
+      hamburgerBtn.classList.toggle("open");
     }
   };
 
   const closeMenu = () => {
     if (isMobile()) {
       navMenu.classList.remove("show");
+      hamburgerBtn.classList.remove("open");
     }
   };
 
@@ -31,11 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", closeMenu);
   document.addEventListener("click", handleOutsideClick);
 
-  // Close menu when clicking any link
   navLinks.forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  // Ensure correct state on load
-  closeMenu();
+  closeMenu(); // on load
 });
